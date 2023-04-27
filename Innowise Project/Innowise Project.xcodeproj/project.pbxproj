@@ -1,0 +1,474 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0DC952F829F9BF100074254C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952F729F9BF100074254C /* AppDelegate.swift */; };
+		0DC952FA29F9BF100074254C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952F929F9BF100074254C /* SceneDelegate.swift */; };
+		0DC952FC29F9BF100074254C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952FB29F9BF100074254C /* ViewController.swift */; };
+		0DC952FF29F9BF100074254C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC952FD29F9BF100074254C /* Main.storyboard */; };
+		0DC9530129F9BF110074254C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9530029F9BF110074254C /* Assets.xcassets */; };
+		0DC9530429F9BF110074254C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9530229F9BF110074254C /* LaunchScreen.storyboard */; };
+		0DC9531329FA7E170074254C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531229FA7E170074254C /* Config.swift */; };
+		0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531429FA7F200074254C /* NetworkClient.swift */; };
+		CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DC952F429F9BF100074254C /* Innowise Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Innowise Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DC952F729F9BF100074254C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0DC952F929F9BF100074254C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0DC952FB29F9BF100074254C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0DC952FE29F9BF100074254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DC9530029F9BF110074254C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DC9530329F9BF110074254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0DC9530529F9BF110074254C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DC9531229FA7E170074254C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		0DC9531429FA7F200074254C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.debug.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.debug.xcconfig"; sourceTree = "<group>"; };
+		C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.release.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.release.xcconfig"; sourceTree = "<group>"; };
+		D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Innowise_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0DC952F129F9BF100074254C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DC952EB29F9BF100074254C = {
+			isa = PBXGroup;
+			children = (
+				0DC952F629F9BF100074254C /* Innowise Project */,
+				0DC952F529F9BF100074254C /* Products */,
+				BB6D18376EA9E4501278DDD7 /* Pods */,
+				38DC73F1B519A2EC164AD1F3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0DC952F529F9BF100074254C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0DC952F429F9BF100074254C /* Innowise Project.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0DC952F629F9BF100074254C /* Innowise Project */ = {
+			isa = PBXGroup;
+			children = (
+				0DC9530B29F9BF480074254C /* Network */,
+				0DC9530E29F9BF730074254C /* Controller */,
+				0DC9530D29F9BF6B0074254C /* View */,
+				0DC9530C29F9BF570074254C /* Model */,
+				0DC952F729F9BF100074254C /* AppDelegate.swift */,
+				0DC952F929F9BF100074254C /* SceneDelegate.swift */,
+				0DC9530029F9BF110074254C /* Assets.xcassets */,
+				0DC9530229F9BF110074254C /* LaunchScreen.storyboard */,
+				0DC9530529F9BF110074254C /* Info.plist */,
+			);
+			path = "Innowise Project";
+			sourceTree = "<group>";
+		};
+		0DC9530B29F9BF480074254C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0DC9531229FA7E170074254C /* Config.swift */,
+				0DC9531429FA7F200074254C /* NetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0DC9530C29F9BF570074254C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DC9530D29F9BF6B0074254C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0DC952FD29F9BF100074254C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DC9530E29F9BF730074254C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DC952FB29F9BF100074254C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		38DC73F1B519A2EC164AD1F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB6D18376EA9E4501278DDD7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */,
+				C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DC952F329F9BF100074254C /* Innowise Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DC9530829F9BF110074254C /* Build configuration list for PBXNativeTarget "Innowise Project" */;
+			buildPhases = (
+				2C1E29E9614CFD1B2DC5D5B1 /* [CP] Check Pods Manifest.lock */,
+				0DC952F029F9BF100074254C /* Sources */,
+				0DC952F129F9BF100074254C /* Frameworks */,
+				0DC952F229F9BF100074254C /* Resources */,
+				06167F8E078415CD01B462F8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Innowise Project";
+			productName = "Innowise Project";
+			productReference = 0DC952F429F9BF100074254C /* Innowise Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0DC952EC29F9BF100074254C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					0DC952F329F9BF100074254C = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 0DC952EF29F9BF100074254C /* Build configuration list for PBXProject "Innowise Project" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0DC952EB29F9BF100074254C;
+			productRefGroup = 0DC952F529F9BF100074254C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DC952F329F9BF100074254C /* Innowise Project */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0DC952F229F9BF100074254C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DC9530429F9BF110074254C /* LaunchScreen.storyboard in Resources */,
+				0DC9530129F9BF110074254C /* Assets.xcassets in Resources */,
+				0DC952FF29F9BF100074254C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06167F8E078415CD01B462F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C1E29E9614CFD1B2DC5D5B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Innowise Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0DC952F029F9BF100074254C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DC952FC29F9BF100074254C /* ViewController.swift in Sources */,
+				0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */,
+				0DC9531329FA7E170074254C /* Config.swift in Sources */,
+				0DC952F829F9BF100074254C /* AppDelegate.swift in Sources */,
+				0DC952FA29F9BF100074254C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0DC952FD29F9BF100074254C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DC952FE29F9BF100074254C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0DC9530229F9BF110074254C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DC9530329F9BF110074254C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0DC9530629F9BF110074254C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0DC9530729F9BF110074254C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0DC9530929F9BF110074254C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4LBW5W7LV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Innowise Project/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewBD.Innowise-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0DC9530A29F9BF110074254C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J4LBW5W7LV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Innowise Project/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "andrewBD.Innowise-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0DC952EF29F9BF100074254C /* Build configuration list for PBXProject "Innowise Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DC9530629F9BF110074254C /* Debug */,
+				0DC9530729F9BF110074254C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DC9530829F9BF110074254C /* Build configuration list for PBXNativeTarget "Innowise Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DC9530929F9BF110074254C /* Debug */,
+				0DC9530A29F9BF110074254C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0DC952EC29F9BF100074254C /* Project object */;
+}
