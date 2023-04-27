@@ -9,9 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     var netBit = NetworkClient()
-    override func viewDidLoad() {
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
         netBit.doRequest()
+         //print(RepoManager.models[0].name)
        
     }
 

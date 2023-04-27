@@ -24,7 +24,7 @@ class NetworkClient {
             .response{ response in
                 switch response.result {
                 case .success(let data):
-                    print(data)
+                    RepoManager.parseJson(data!, self.config.getBaseUrl())
                 case .failure(let error):
                     var errText: String
                     if let urlError = error.underlyingError as? URLError {

@@ -1,11 +1,5 @@
-//
-//  ErrorHandler.swift
-//  Innowise Project
-//
-//  Created by Андрей Логвинов on 4/27/23.
-//
-
 import Foundation
+
 
 class ErrorHandler{
     
