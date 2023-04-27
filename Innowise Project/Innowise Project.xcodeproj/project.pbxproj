@@ -15,6 +15,7 @@
 		0DC9530429F9BF110074254C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9530229F9BF110074254C /* LaunchScreen.storyboard */; };
 		0DC9531329FA7E170074254C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531229FA7E170074254C /* Config.swift */; };
 		0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531429FA7F200074254C /* NetworkClient.swift */; };
+		0DC9531729FAB8040074254C /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531629FAB8040074254C /* ErrorHandler.swift */; };
 		CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		0DC9530529F9BF110074254C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC9531229FA7E170074254C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		0DC9531429FA7F200074254C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		0DC9531629FAB8040074254C /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.debug.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.debug.xcconfig"; sourceTree = "<group>"; };
 		C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.release.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.release.xcconfig"; sourceTree = "<group>"; };
 		D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Innowise_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 			children = (
 				0DC9531229FA7E170074254C /* Config.swift */,
 				0DC9531429FA7F200074254C /* NetworkClient.swift */,
+				0DC9531629FAB8040074254C /* ErrorHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -126,7 +129,6 @@
 				59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */,
 				C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -248,6 +250,7 @@
 				0DC952FC29F9BF100074254C /* ViewController.swift in Sources */,
 				0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */,
 				0DC9531329FA7E170074254C /* Config.swift in Sources */,
+				0DC9531729FAB8040074254C /* ErrorHandler.swift in Sources */,
 				0DC952F829F9BF100074254C /* AppDelegate.swift in Sources */,
 				0DC952FA29F9BF100074254C /* SceneDelegate.swift in Sources */,
 			);

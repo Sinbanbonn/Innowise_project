@@ -17,7 +17,7 @@ class NetworkClient {
         configuration.timeoutIntervalForRequest = 300
         return Session(configuration: configuration)
     }()
-     
+    
     func doRequest(method: HTTPMethod = .get , parametrs: [String : String] = [:], headers: [String: String] = [:]){
         
         session.request(config.getBaseUrl() , method: method, headers: config.getHeaders())
@@ -26,15 +26,23 @@ class NetworkClient {
                 case .success(let data):
                     print(data)
                 case .failure(let error):
-                    print(error)
+                    var errText: String
+                    if let urlError = error.underlyingError as? URLError {
+                       errText = ErrorHandler.URLErrorHandler(urlError: urlError)
+                    } else if let httpError = error as? HTTPURLResponse {
+                        errText = ErrorHandler.httpErrorHandler(httpError: httpError)
+                    } else {
+                        errText = "Undefined error!"
+                    }
+                    
+                    print(errText)
+                    
                 }
-                
                 
             }
         
     }
     
+    
+    
 }
-
-
-
