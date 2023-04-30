@@ -33,9 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-Jw-ZAZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-Jw-ZAZ">
                                 <rect key="frame" x="0.0" y="195" width="393" height="590"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Vs5-XY-M0I"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="D2e-qK-CHm"/>
                             </scrollView>
@@ -44,24 +43,46 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vMA-QA-Y8E">
-                                <rect key="frame" x="93" y="133" width="209" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <menu key="menu" id="y5s-tO-Sib">
-                                    <children>
-                                        <command title="Item 1" id="Dhb-Mh-ZRH"/>
-                                        <command title="Item 2" id="wAU-Cw-Zff"/>
-                                    </children>
-                                </menu>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="275" translatesAutoresizingMaskIntoConstraints="NO" id="hdi-0L-dkJ">
+                                <rect key="frame" x="20" y="121" width="357" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-Dj-E0Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
+                                        <menu key="menu" id="It1-w3-db8">
+                                            <children>
+                                                <command title="Item 1" id="gP0-LD-5t0"/>
+                                                <command title="Item 2" id="HWI-3T-6AC"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daY-yQ-bMf">
+                                        <rect key="frame" x="316" y="0.0" width="41" height="30"/>
+                                        <menu key="menu" id="BCJ-vx-N7a">
+                                            <children>
+                                                <command title="Item 1" id="X5y-8F-yqt"/>
+                                                <command title="Item 2" id="0tF-1P-xYz"/>
+                                            </children>
+                                        </menu>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P4n-Jw-ZAZ" firstAttribute="top" secondItem="hdi-0L-dkJ" secondAttribute="bottom" constant="44" id="I7f-fv-THV"/>
+                            <constraint firstItem="hdi-0L-dkJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dVT-Ut-BUR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hdi-0L-dkJ" secondAttribute="trailing" constant="16" id="uDg-pK-QDv"/>
+                            <constraint firstItem="hdi-0L-dkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="y8A-M7-6hU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="search" id="ANJ-5w-5w3"/>
                     <connections>
                         <outlet property="scroll" destination="P4n-Jw-ZAZ" id="MXD-U5-Blh"/>
+                        <outlet property="searchPopupButton" destination="o8r-Dj-E0Z" id="1v0-Ml-rIC"/>
+                        <outlet property="sortPopButton" destination="daY-yQ-bMf" id="wuy-zH-dNa"/>
                         <outlet property="tableView" destination="1Ci-HN-VMN" id="feH-FA-igs"/>
                         <segue destination="N98-Ft-bQX" kind="presentation" identifier="cellInfo" id="Eh8-Ul-mDC"/>
                     </connections>

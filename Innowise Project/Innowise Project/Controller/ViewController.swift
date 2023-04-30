@@ -9,26 +9,58 @@ import UIKit
 import SwiftUI
 
 class ViewController: UIViewController {
-   
+    
     var storage : [RepoModel] = []
     var filteredStorage = [RepoModel]()
     var service = RepoService()
     let searchController = UISearchController()
+    var searchMethod: String = "By Name"
     
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var buttonPressed: UIButton!
     
+    @IBOutlet weak var sortPopButton: UIButton!
+    @IBOutlet weak var searchPopupButton: UIButton!
+
+    
+    
+    func setSortPopButton(){
+        let optHandler = {(action: UIAction) in
+            self.sortBy(method: action.title)
+        }
+        sortPopButton.menu = UIMenu(children:
+                                        [UIAction(title: "Default"  , state: .on  , handler: optHandler),
+                                         UIAction(title: "By Name"  , handler: optHandler) ,
+                                         UIAction(title: "By Source"  , state: .on  , handler: optHandler)
+                                        ])
+        sortPopButton.showsMenuAsPrimaryAction = true
+        sortPopButton.changesSelectionAsPrimaryAction = true
+    }
+    
+    func setSearchPopButton(){
+        let optHandler = {(action: UIAction) in
+            self.searchMethod = action.title
+        }
+        searchPopupButton.menu = UIMenu(children:
+                                        [UIAction(title: "By Name"  , state: .on  , handler: optHandler),
+                                         UIAction(title: "By Title"  , handler: optHandler) ,
+                                         UIAction(title: "By Source"  , state: .on  , handler: optHandler)
+                                        ])
+        searchPopupButton.showsMenuAsPrimaryAction = true
+        searchPopupButton.changesSelectionAsPrimaryAction = true
+    }
+    
     override func viewDidLoad(){
-        
+        setSortPopButton()
+        setSearchPopButton()
         tableView.delegate = self
         tableView.register(UINib(nibName: "RepoCellTableViewCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
-        loadTable()
         tableView.dataSource = self
         scroll.contentSize = tableView.contentSize
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
+        loadTable()
         super.viewDidLoad()
         initSearchController()
         
@@ -50,9 +82,9 @@ class ViewController: UIViewController {
             result1 , result2 in
             switch (result1 , result2){
             case (.success(let git) , .success(let bit)):
-                var aser = self.fromDtoBitToArray(bitBucketData: bit)
-                var gitStore = self.fromDtoGitToArray(gitData: git)
-                self.storage += aser
+                let bitStore = self.fromDtoBitToArray(bitBucketData: bit)
+                let gitStore = self.fromDtoGitToArray(gitData: git)
+                self.storage += bitStore
                 self.storage += gitStore
                 Task{
                     for value in 0...self.storage.count - 1 {
@@ -135,6 +167,7 @@ class ViewController: UIViewController {
 
 
 extension ViewController : UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (searchController.isActive){
             return filteredStorage.count
@@ -145,8 +178,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "ReusableCell" , for: indexPath) as! RepoCellTableViewCell
         if (searchController.isActive){
-            
-            print(filteredStorage)
             cell.nameLabel.text  = filteredStorage[indexPath.row].name
             cell.descriptionLabel.text = filteredStorage[indexPath.row].from
             
@@ -155,7 +186,16 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
                 cell.userImage.image = img
             }
             
-        }else{
+        }else if (sortPopButton.titleLabel?.text != "Default"){
+            cell.nameLabel.text  = storage[indexPath.row].name
+            cell.descriptionLabel.text = storage[indexPath.row].from
+            
+            cell.fromLabel.text = storage[indexPath.row].from
+            if let img = storage[indexPath.row].image {
+                cell.userImage.image = img
+            }
+        }
+        else{
             cell.nameLabel.text  = storage[indexPath.row].name
             cell.descriptionLabel.text = storage[indexPath.row].from
             
@@ -186,11 +226,20 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
     func filterForSearch(searchString: String){
         filteredStorage  = storage.filter{ repoModel in
             if searchController.searchBar.text != ""{
+                var searchMatch :Bool  = false
+                switch searchMethod{
+                case "By Name" :
+                    searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
+                    print("first")
+                case "By Source":
+                    searchMatch = repoModel.from.lowercased().contains(searchString.lowercased())
+                    print("second")
+                default:
+                    searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
+                    print("default")
+                }
                 
-                let searchNameMatch = repoModel.name.lowercased().contains(searchString.lowercased())
-                let searchFromMatch = repoModel.from.lowercased().contains(searchString.lowercased())
-                print()
-                return searchNameMatch || searchFromMatch
+                return searchMatch
             }
             return true
         }
@@ -218,5 +267,18 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
         let searchText = searchBar.text!
         print("Was called updateSearchResults")
         filterForSearch(searchString: searchText)
+    }
+}
+extension ViewController {
+    func sortBy(method: String){
+        switch method{
+        case "By Name" :
+            storage = storage.sorted(by: {$0.name < $1.name})
+        case "By Source":
+            storage = storage.sorted(by:  {$0.from <= $1.from } )
+        default:
+            filteredStorage = storage
+        }
+        
     }
 }
