@@ -10,18 +10,22 @@
 		0DC952F829F9BF100074254C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952F729F9BF100074254C /* AppDelegate.swift */; };
 		0DC952FA29F9BF100074254C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952F929F9BF100074254C /* SceneDelegate.swift */; };
 		0DC952FC29F9BF100074254C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC952FB29F9BF100074254C /* ViewController.swift */; };
-		0DC952FF29F9BF100074254C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC952FD29F9BF100074254C /* Main.storyboard */; };
 		0DC9530129F9BF110074254C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9530029F9BF110074254C /* Assets.xcassets */; };
 		0DC9530429F9BF110074254C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DC9530229F9BF110074254C /* LaunchScreen.storyboard */; };
-		0DC9531329FA7E170074254C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531229FA7E170074254C /* Config.swift */; };
-		0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531429FA7F200074254C /* NetworkClient.swift */; };
-		0DC9531729FAB8040074254C /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531629FAB8040074254C /* ErrorHandler.swift */; };
 		0DC9531929FABDB30074254C /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531829FABDB30074254C /* RepoModel.swift */; };
-		0DC9531B29FABDC00074254C /* RepoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531A29FABDC00074254C /* RepoManager.swift */; };
 		0DC9531F29FABE180074254C /* GitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9531E29FABE180074254C /* GitData.swift */; };
 		0DC9532129FABE380074254C /* BitBucketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9532029FABE380074254C /* BitBucketData.swift */; };
 		0DC9532329FABFC80074254C /* ViewCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9532229FABFC80074254C /* ViewCellInfo.swift */; };
 		0DC9532529FAEEED0074254C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC9532429FAEEED0074254C /* Constants.swift */; };
+		0DE4009629FD31CC0060B586 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009529FD31CC0060B586 /* Endpoint.swift */; };
+		0DE4009829FD31DB0060B586 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009729FD31DB0060B586 /* HTTPClient.swift */; };
+		0DE4009A29FD31EB0060B586 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009929FD31EB0060B586 /* HTTPMethod.swift */; };
+		0DE4009C29FD31FE0060B586 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009B29FD31FE0060B586 /* RequestError.swift */; };
+		0DE4009E29FD32440060B586 /* ReposEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009D29FD32440060B586 /* ReposEndpoint.swift */; };
+		0DE400A029FD32530060B586 /* RepoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4009F29FD32530060B586 /* RepoService.swift */; };
+		0DE400A329FD9D280060B586 /* RepoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE400A129FD9D280060B586 /* RepoCellTableViewCell.swift */; };
+		0DE400A429FD9D280060B586 /* RepoCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */; };
+		0DFC7D8C29FED3C6000980F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFC7D8A29FED3C6000980F8 /* Main.storyboard */; };
 		CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,19 +34,23 @@
 		0DC952F729F9BF100074254C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DC952F929F9BF100074254C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0DC952FB29F9BF100074254C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0DC952FE29F9BF100074254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DC9530029F9BF110074254C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DC9530329F9BF110074254C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DC9530529F9BF110074254C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DC9531229FA7E170074254C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		0DC9531429FA7F200074254C /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		0DC9531629FAB8040074254C /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		0DC9531829FABDB30074254C /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
-		0DC9531A29FABDC00074254C /* RepoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoManager.swift; sourceTree = "<group>"; };
 		0DC9531E29FABE180074254C /* GitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitData.swift; sourceTree = "<group>"; };
 		0DC9532029FABE380074254C /* BitBucketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitBucketData.swift; sourceTree = "<group>"; };
 		0DC9532229FABFC80074254C /* ViewCellInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCellInfo.swift; sourceTree = "<group>"; };
 		0DC9532429FAEEED0074254C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0DE4009529FD31CC0060B586 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0DE4009729FD31DB0060B586 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0DE4009929FD31EB0060B586 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0DE4009B29FD31FE0060B586 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		0DE4009D29FD32440060B586 /* ReposEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposEndpoint.swift; sourceTree = "<group>"; };
+		0DE4009F29FD32530060B586 /* RepoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoService.swift; sourceTree = "<group>"; };
+		0DE400A129FD9D280060B586 /* RepoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellTableViewCell.swift; sourceTree = "<group>"; };
+		0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCellTableViewCell.xib; sourceTree = "<group>"; };
+		0DFC7D8B29FED3C6000980F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.debug.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.debug.xcconfig"; sourceTree = "<group>"; };
 		C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.release.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.release.xcconfig"; sourceTree = "<group>"; };
 		D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Innowise_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +71,8 @@
 		0DC952EB29F9BF100074254C = {
 			isa = PBXGroup;
 			children = (
+				0DE400A129FD9D280060B586 /* RepoCellTableViewCell.swift */,
+				0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */,
 				0DC952F629F9BF100074254C /* Innowise Project */,
 				0DC952F529F9BF100074254C /* Products */,
 				BB6D18376EA9E4501278DDD7 /* Pods */,
@@ -81,7 +91,7 @@
 		0DC952F629F9BF100074254C /* Innowise Project */ = {
 			isa = PBXGroup;
 			children = (
-				0DC9530B29F9BF480074254C /* Network */,
+				0DE4009129FD31530060B586 /* NetworkLayer */,
 				0DC9530C29F9BF570074254C /* Model */,
 				0DC9530D29F9BF6B0074254C /* View */,
 				0DC9530E29F9BF730074254C /* Controller */,
@@ -95,21 +105,10 @@
 			path = "Innowise Project";
 			sourceTree = "<group>";
 		};
-		0DC9530B29F9BF480074254C /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				0DC9531229FA7E170074254C /* Config.swift */,
-				0DC9531429FA7F200074254C /* NetworkClient.swift */,
-				0DC9531629FAB8040074254C /* ErrorHandler.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		0DC9530C29F9BF570074254C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0DC9531829FABDB30074254C /* RepoModel.swift */,
-				0DC9531A29FABDC00074254C /* RepoManager.swift */,
 				0DC9531E29FABE180074254C /* GitData.swift */,
 				0DC9532029FABE380074254C /* BitBucketData.swift */,
 			);
@@ -119,7 +118,7 @@
 		0DC9530D29F9BF6B0074254C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0DC952FD29F9BF100074254C /* Main.storyboard */,
+				0DFC7D8A29FED3C6000980F8 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +130,43 @@
 				0DC9532229FABFC80074254C /* ViewCellInfo.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DE4009129FD31530060B586 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4009229FD316A0060B586 /* Base */,
+				0DE4009429FD31940060B586 /* Services */,
+				0DE4009329FD31770060B586 /* Endpoints */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		0DE4009229FD316A0060B586 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4009529FD31CC0060B586 /* Endpoint.swift */,
+				0DE4009729FD31DB0060B586 /* HTTPClient.swift */,
+				0DE4009929FD31EB0060B586 /* HTTPMethod.swift */,
+				0DE4009B29FD31FE0060B586 /* RequestError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0DE4009329FD31770060B586 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4009D29FD32440060B586 /* ReposEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		0DE4009429FD31940060B586 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4009F29FD32530060B586 /* RepoService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		38DC73F1B519A2EC164AD1F3 /* Frameworks */ = {
@@ -212,7 +248,8 @@
 			files = (
 				0DC9530429F9BF110074254C /* LaunchScreen.storyboard in Resources */,
 				0DC9530129F9BF110074254C /* Assets.xcassets in Resources */,
-				0DC952FF29F9BF100074254C /* Main.storyboard in Resources */,
+				0DE400A429FD9D280060B586 /* RepoCellTableViewCell.xib in Resources */,
+				0DFC7D8C29FED3C6000980F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,16 +302,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE4009C29FD31FE0060B586 /* RequestError.swift in Sources */,
 				0DC952FC29F9BF100074254C /* ViewController.swift in Sources */,
+				0DE400A329FD9D280060B586 /* RepoCellTableViewCell.swift in Sources */,
 				0DC9531929FABDB30074254C /* RepoModel.swift in Sources */,
-				0DC9531529FA7F200074254C /* NetworkClient.swift in Sources */,
-				0DC9531329FA7E170074254C /* Config.swift in Sources */,
-				0DC9531729FAB8040074254C /* ErrorHandler.swift in Sources */,
-				0DC9531B29FABDC00074254C /* RepoManager.swift in Sources */,
+				0DE4009629FD31CC0060B586 /* Endpoint.swift in Sources */,
+				0DE4009E29FD32440060B586 /* ReposEndpoint.swift in Sources */,
 				0DC952F829F9BF100074254C /* AppDelegate.swift in Sources */,
+				0DE4009A29FD31EB0060B586 /* HTTPMethod.swift in Sources */,
 				0DC9532329FABFC80074254C /* ViewCellInfo.swift in Sources */,
 				0DC952FA29F9BF100074254C /* SceneDelegate.swift in Sources */,
+				0DE4009829FD31DB0060B586 /* HTTPClient.swift in Sources */,
 				0DC9531F29FABE180074254C /* GitData.swift in Sources */,
+				0DE400A029FD32530060B586 /* RepoService.swift in Sources */,
 				0DC9532129FABE380074254C /* BitBucketData.swift in Sources */,
 				0DC9532529FAEEED0074254C /* Constants.swift in Sources */,
 			);
@@ -283,20 +323,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0DC952FD29F9BF100074254C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DC952FE29F9BF100074254C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0DC9530229F9BF110074254C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				0DC9530329F9BF110074254C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0DFC7D8A29FED3C6000980F8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0DFC7D8B29FED3C6000980F8 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

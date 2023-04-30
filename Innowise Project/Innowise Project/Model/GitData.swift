@@ -1,13 +1,25 @@
 import Foundation
 
-
-struct Item: Decodable{
-    let name: String
-    let description : String
-    let owner  : GitOwner
+struct GitRep: Codable{
+    
+    let name :String
+    let owner: GitOwner
+    let description: String?
+    
+    enum CodingKeys: String , CodingKey{
+        
+        case name
+        case owner
+        case description
+    }
 }
 
-struct GitOwner : Decodable {
-    let avatar_url : String
+struct GitOwner : Codable {
+    let avatarUrl : String
+    
+    enum CodingKeys: String , CodingKey{
+        
+        case avatarUrl = "avatar_url"
+    }
 }
 
