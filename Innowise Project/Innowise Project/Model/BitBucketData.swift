@@ -13,23 +13,25 @@ struct Values: Codable {
     let title : String
     let description : String
     let owner : Owner
-    let name : String?
+    //let name : String?
     
     enum CodingKeys: String , CodingKey{
         case title = "name"
         case description
         case owner
-        case name  = "nickname" 
+        
     }
 }
 
 struct Owner: Codable {
     let dispName : String
     let links : Links
+    let type : String
     
     enum CodingKeys: String , CodingKey{
         case dispName = "display_name"
         case links
+        case type
     }
 }
 

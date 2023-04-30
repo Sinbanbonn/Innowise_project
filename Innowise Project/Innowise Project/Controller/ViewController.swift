@@ -11,10 +11,12 @@ import SwiftUI
 class ViewController: UIViewController {
     
     var storage : [RepoModel] = []
+    var defStorage: [RepoModel] = []
     var filteredStorage = [RepoModel]()
     var service = RepoService()
     let searchController = UISearchController()
     var searchMethod: String = "By Name"
+    var refreshControll = UIRefreshControl()
     
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var tableView: UITableView!
@@ -31,8 +33,9 @@ class ViewController: UIViewController {
         }
         sortPopButton.menu = UIMenu(children:
                                         [UIAction(title: "Default"  , state: .on  , handler: optHandler),
-                                         UIAction(title: "By Name"  , handler: optHandler) ,
-                                         UIAction(title: "By Source"  , state: .on  , handler: optHandler)
+                                         UIAction(title: "A - Z"  , handler: optHandler) ,
+                                         UIAction(title: "Z - A"   , handler: optHandler),
+                                         UIAction(title: "By Source" , handler: optHandler)
                                         ])
         sortPopButton.showsMenuAsPrimaryAction = true
         sortPopButton.changesSelectionAsPrimaryAction = true
@@ -56,16 +59,24 @@ class ViewController: UIViewController {
         setSearchPopButton()
         tableView.delegate = self
         tableView.register(UINib(nibName: "RepoCellTableViewCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        
         tableView.dataSource = self
         scroll.contentSize = tableView.contentSize
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         loadTable()
+        refreshControll.addTarget(self, action: #selector(refreshTable), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControll)
         super.viewDidLoad()
         initSearchController()
         
     }
-    
+    @objc func refreshTable(send : UIRefreshControl ){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.refreshControll.endRefreshing()
+        }
+    }
     private func fetchData(completion: @escaping ((Result<[GitRep], RequestError> , Result<BucketData , RequestError>)) -> Void) {
         Task(priority: .background) {
             async let resultGit =  service.getGitData()
@@ -88,14 +99,14 @@ class ViewController: UIViewController {
                 self.storage += gitStore
                 Task{
                     for value in 0...self.storage.count - 1 {
-                        async let a = self.loadImage(from: URL(string: self.storage[value].picture)!)
-                        self.storage[value].image = try await a
+                        async let img = self.loadImage(from: URL(string: self.storage[value].picture)!)
+                        self.storage[value].image = try await img
                         
                         self.tableView.reloadData()
                     }
                     
                 }
-                
+                self.defStorage = self.storage
                 self.tableView.reloadData()
                 
                 
@@ -115,17 +126,20 @@ class ViewController: UIViewController {
         var models : [RepoModel] = []
         for value in 0...(bitBucketData.values.count - 1){
             
-            let name = bitBucketData.values[value].title
+            let title = bitBucketData.values[value].title
+            let name = bitBucketData.values[value].owner.dispName
             let description = bitBucketData.values[value].description
             let picture =  bitBucketData.values[value].owner.links.avatar.href
+            let source = "BitBucket"
+            let htmlURL = bitBucketData.values[value].owner.links.html?.href ?? "No link to HTML URL"
+            let type = bitBucketData.values[value].owner.type
+            
             var image: UIImage?
             Task{
                 image =  try await loadImage(from:URL(string: picture)!)
                 
             }
-            
-            let model = RepoModel(name: name, description: description, picture: picture, source: "bit" , image: image)
-            
+            let model = RepoModel(name: name, title: title, description: description, picture: picture, source: source, htmlURL: htmlURL, type: type , image: image)
             models.append(model)
         }
         
@@ -134,17 +148,21 @@ class ViewController: UIViewController {
     func fromDtoGitToArray(gitData: [GitRep])->[RepoModel]{
         var models : [RepoModel] = []
         for value in gitData{
-            let name = value.title
+            let title = value.title
+            let name = value.owner.name ?? "Anonymus"
             let description = value.description ?? ""
             let picture =  value.owner.avatarUrl
+            let source = "GitHub"
+            let htmlURL = value.htmlUrl
+            let type = value.owner.type
             var image: UIImage?
             Task{
                 image =  try await loadImage(from:URL(string: picture)!)
                 
             }
-            
-            let model = RepoModel(name: name, description: description, picture: picture, source: "git" , image: image)
-            
+
+            let model = RepoModel(name: name, title: title, description: description, picture: picture, source: source, htmlURL: htmlURL, type: type , image: image)
+
             models.append(model)
         }
         return models
@@ -178,7 +196,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCell(withIdentifier: "ReusableCell" , for: indexPath) as! RepoCellTableViewCell
         if (searchController.isActive){
-            cell.nameLabel.text  = filteredStorage[indexPath.row].name
+            cell.nameLabel.text  = filteredStorage[indexPath.row].title
             cell.descriptionLabel.text = filteredStorage[indexPath.row].source
             
             cell.fromLabel.text = filteredStorage[indexPath.row].source
@@ -187,16 +205,16 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
             }
             
         }else if (sortPopButton.titleLabel?.text != "Default"){
-            cell.nameLabel.text  = storage[indexPath.row].name
-            cell.descriptionLabel.text = storage[indexPath.row].source
+            cell.nameLabel.text  = defStorage[indexPath.row].title
+            cell.descriptionLabel.text = defStorage[indexPath.row].source
             
-            cell.fromLabel.text = storage[indexPath.row].source
-            if let img = storage[indexPath.row].image {
+            cell.fromLabel.text = defStorage[indexPath.row].source
+            if let img = defStorage[indexPath.row].image {
                 cell.userImage.image = img
             }
         }
         else{
-            cell.nameLabel.text  = storage[indexPath.row].name
+            cell.nameLabel.text  = storage[indexPath.row].title
             cell.descriptionLabel.text = storage[indexPath.row].source
             
             cell.fromLabel.text = storage[indexPath.row].source
@@ -230,12 +248,14 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
                 switch searchMethod{
                 case "By Name" :
                     searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
+                case "By Title" :
+                    searchMatch = repoModel.title.lowercased().contains(searchString.lowercased())
                     print("first")
                 case "By Source":
                     searchMatch = repoModel.source.lowercased().contains(searchString.lowercased())
                     print("second")
                 default:
-                    searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
+                    searchMatch = repoModel.title.lowercased().contains(searchString.lowercased())
                     print("default")
                 }
                 
@@ -272,10 +292,14 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
 extension ViewController {
     func sortBy(method: String){
         switch method{
-        case "By Name" :
-            storage = storage.sorted(by: {$0.name < $1.name})
+        case "A - Z" :
+            defStorage = storage.sorted(by: {$0.title < $1.title})
+        case "Z - A" :
+            defStorage = storage.sorted(by: {$0.title > $1.title})
         case "By Source":
-            storage = storage.sorted(by:  {$0.source <= $1.source } )
+            defStorage = storage.sorted(by:  {$0.source <= $1.source })
+        case "Default" :
+            defStorage = storage
         default:
             filteredStorage = storage
         }
