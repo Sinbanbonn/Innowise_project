@@ -115,7 +115,7 @@ class ViewController: UIViewController {
         var models : [RepoModel] = []
         for value in 0...(bitBucketData.values.count - 1){
             
-            let name = bitBucketData.values[value].name
+            let name = bitBucketData.values[value].title
             let description = bitBucketData.values[value].description
             let picture =  bitBucketData.values[value].owner.links.avatar.href
             var image: UIImage?
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
                 
             }
             
-            let model = RepoModel(name: name, description: description, picture: picture, from: "bit" , image: image)
+            let model = RepoModel(name: name, description: description, picture: picture, source: "bit" , image: image)
             
             models.append(model)
         }
@@ -134,7 +134,7 @@ class ViewController: UIViewController {
     func fromDtoGitToArray(gitData: [GitRep])->[RepoModel]{
         var models : [RepoModel] = []
         for value in gitData{
-            let name = value.name
+            let name = value.title
             let description = value.description ?? ""
             let picture =  value.owner.avatarUrl
             var image: UIImage?
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
                 
             }
             
-            let model = RepoModel(name: name, description: description, picture: picture, from: "git" , image: image)
+            let model = RepoModel(name: name, description: description, picture: picture, source: "git" , image: image)
             
             models.append(model)
         }
@@ -179,27 +179,27 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate{
         let cell  = tableView.dequeueReusableCell(withIdentifier: "ReusableCell" , for: indexPath) as! RepoCellTableViewCell
         if (searchController.isActive){
             cell.nameLabel.text  = filteredStorage[indexPath.row].name
-            cell.descriptionLabel.text = filteredStorage[indexPath.row].from
+            cell.descriptionLabel.text = filteredStorage[indexPath.row].source
             
-            cell.fromLabel.text = filteredStorage[indexPath.row].from
+            cell.fromLabel.text = filteredStorage[indexPath.row].source
             if let img = filteredStorage[indexPath.row].image {
                 cell.userImage.image = img
             }
             
         }else if (sortPopButton.titleLabel?.text != "Default"){
             cell.nameLabel.text  = storage[indexPath.row].name
-            cell.descriptionLabel.text = storage[indexPath.row].from
+            cell.descriptionLabel.text = storage[indexPath.row].source
             
-            cell.fromLabel.text = storage[indexPath.row].from
+            cell.fromLabel.text = storage[indexPath.row].source
             if let img = storage[indexPath.row].image {
                 cell.userImage.image = img
             }
         }
         else{
             cell.nameLabel.text  = storage[indexPath.row].name
-            cell.descriptionLabel.text = storage[indexPath.row].from
+            cell.descriptionLabel.text = storage[indexPath.row].source
             
-            cell.fromLabel.text = storage[indexPath.row].from
+            cell.fromLabel.text = storage[indexPath.row].source
             if let img = storage[indexPath.row].image {
                 cell.userImage.image = img
             }
@@ -232,7 +232,7 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
                     searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
                     print("first")
                 case "By Source":
-                    searchMatch = repoModel.from.lowercased().contains(searchString.lowercased())
+                    searchMatch = repoModel.source.lowercased().contains(searchString.lowercased())
                     print("second")
                 default:
                     searchMatch = repoModel.name.lowercased().contains(searchString.lowercased())
@@ -275,7 +275,7 @@ extension ViewController {
         case "By Name" :
             storage = storage.sorted(by: {$0.name < $1.name})
         case "By Source":
-            storage = storage.sorted(by:  {$0.from <= $1.from } )
+            storage = storage.sorted(by:  {$0.source <= $1.source } )
         default:
             filteredStorage = storage
         }
