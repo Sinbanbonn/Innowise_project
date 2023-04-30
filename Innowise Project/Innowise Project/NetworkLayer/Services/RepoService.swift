@@ -15,12 +15,10 @@ protocol RepoServiciable {
 struct RepoService: HTTPClient, RepoServiciable {
     
     func getGitData() async -> Result<[GitRep], RequestError> {
-        print("gegGitData was called")
         return await sendRequest(endpoint: ReposEndpoint.git, responseModel: [GitRep].self)
     }
     
     func GetBibBucketData() async -> Result<BucketData, RequestError> {
-        print("GetBibBucketData was called ")
         return await sendRequest(endpoint: ReposEndpoint.bitBucket, responseModel: BucketData.self)
     }
 }

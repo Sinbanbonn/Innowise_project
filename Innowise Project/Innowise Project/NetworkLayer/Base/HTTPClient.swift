@@ -17,7 +17,7 @@ extension HTTPClient {
         endpoint: Endpoint,
         responseModel: T.Type
     ) async -> Result<T, RequestError> {
-        print("Statrt \(endpoint.host) ")
+
         var urlComponents = URLComponents()
         urlComponents.scheme = endpoint.scheme
         urlComponents.host = endpoint.host
@@ -56,7 +56,6 @@ extension HTTPClient {
             case 401:
                 return .failure(.unauthorized)
             default:
-                print(response.statusCode)
                 return .failure(.unexpectedStatusCode)
             }
         } catch {
