@@ -26,6 +26,7 @@
 		0DE400A329FD9D280060B586 /* RepoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE400A129FD9D280060B586 /* RepoCellTableViewCell.swift */; };
 		0DE400A429FD9D280060B586 /* RepoCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */; };
 		0DFC7D8C29FED3C6000980F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFC7D8A29FED3C6000980F8 /* Main.storyboard */; };
+		0DFC7D8E29FF3345000980F8 /* RepoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC7D8D29FF3345000980F8 /* RepoManager.swift */; };
 		CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		0DE400A129FD9D280060B586 /* RepoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellTableViewCell.swift; sourceTree = "<group>"; };
 		0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCellTableViewCell.xib; sourceTree = "<group>"; };
 		0DFC7D8B29FED3C6000980F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0DFC7D8D29FF3345000980F8 /* RepoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoManager.swift; sourceTree = "<group>"; };
 		59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.debug.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.debug.xcconfig"; sourceTree = "<group>"; };
 		C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.release.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.release.xcconfig"; sourceTree = "<group>"; };
 		D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Innowise_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				0DC9531829FABDB30074254C /* RepoModel.swift */,
 				0DC9531E29FABE180074254C /* GitData.swift */,
 				0DC9532029FABE380074254C /* BitBucketData.swift */,
+				0DFC7D8D29FF3345000980F8 /* RepoManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				0DE4009829FD31DB0060B586 /* HTTPClient.swift in Sources */,
 				0DC9531F29FABE180074254C /* GitData.swift in Sources */,
 				0DE400A029FD32530060B586 /* RepoService.swift in Sources */,
+				0DFC7D8E29FF3345000980F8 /* RepoManager.swift in Sources */,
 				0DC9532129FABE380074254C /* BitBucketData.swift in Sources */,
 				0DC9532529FAEEED0074254C /* Constants.swift in Sources */,
 			);
