@@ -27,7 +27,6 @@
 		0DE400A429FD9D280060B586 /* RepoCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */; };
 		0DFC7D8C29FED3C6000980F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DFC7D8A29FED3C6000980F8 /* Main.storyboard */; };
 		0DFC7D8E29FF3345000980F8 /* RepoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DFC7D8D29FF3345000980F8 /* RepoManager.swift */; };
-		CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +52,6 @@
 		0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoCellTableViewCell.xib; sourceTree = "<group>"; };
 		0DFC7D8B29FED3C6000980F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DFC7D8D29FF3345000980F8 /* RepoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoManager.swift; sourceTree = "<group>"; };
-		59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.debug.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.debug.xcconfig"; sourceTree = "<group>"; };
-		C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Innowise Project.release.xcconfig"; path = "Target Support Files/Pods-Innowise Project/Pods-Innowise Project.release.xcconfig"; sourceTree = "<group>"; };
-		D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Innowise_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD569EAED94E72FC32C179D1 /* Pods_Innowise_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +72,6 @@
 				0DE400A229FD9D280060B586 /* RepoCellTableViewCell.xib */,
 				0DC952F629F9BF100074254C /* Innowise Project */,
 				0DC952F529F9BF100074254C /* Products */,
-				BB6D18376EA9E4501278DDD7 /* Pods */,
-				38DC73F1B519A2EC164AD1F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,23 +165,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		38DC73F1B519A2EC164AD1F3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D81976A5C164C6F944F2D8B6 /* Pods_Innowise_Project.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BB6D18376EA9E4501278DDD7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */,
-				C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,11 +172,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DC9530829F9BF110074254C /* Build configuration list for PBXNativeTarget "Innowise Project" */;
 			buildPhases = (
-				2C1E29E9614CFD1B2DC5D5B1 /* [CP] Check Pods Manifest.lock */,
 				0DC952F029F9BF100074254C /* Sources */,
 				0DC952F129F9BF100074254C /* Frameworks */,
 				0DC952F229F9BF100074254C /* Resources */,
-				06167F8E078415CD01B462F8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,48 +231,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		06167F8E078415CD01B462F8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Innowise Project/Pods-Innowise Project-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2C1E29E9614CFD1B2DC5D5B1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Innowise Project-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DC952F029F9BF100074254C /* Sources */ = {
@@ -462,7 +394,6 @@
 		};
 		0DC9530929F9BF110074254C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59DDC0281AF5C45E0DF716A5 /* Pods-Innowise Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,7 +422,6 @@
 		};
 		0DC9530A29F9BF110074254C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C540770E8298BB3F70D1F330 /* Pods-Innowise Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
